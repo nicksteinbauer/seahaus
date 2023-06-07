@@ -80,7 +80,7 @@ const options = {
 }
 
 const RichText = ({ content }) => {
-  return <>{documentToReactComponents(content, options)}</>
+  return <>{documentToReactComponents(content.json, options)}</>
 }
 
 export default RichText

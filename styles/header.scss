@@ -1,0 +1,101 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.hamburger, .logo {
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+button.hamburger {
+    border: none;
+    
+}
+.hamburger {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+        .line {
+            width: 100%;
+        }
+        
+    }
+}
+
+.hamContainer {
+    width: 60%;
+    margin: 0 20%;
+}
+
+.line {
+    height: 4px;
+    background-color: #000;
+    margin: 8px 0;
+}
+.line1 {
+    width: 100%;
+}
+.line2 {
+    width: 85%;
+    transition: width .4s ease;
+}
+.line3 {
+    width: 70%;
+    transition: width .3s ease;
+}
+.closeContainer {
+    width: 100%;
+}
+.close {
+    height: 4px;
+    background-color: #000;
+    width: 100%;
+    position: relative;
+    top: 0;
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.close1 {
+    rotate: 45deg;
+    top: 4px;
+}
+.close2 {
+    rotate: -45deg;
+}
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    @media screen and (min-width: $screen-md) {
+        width: 50%;
+    }
+    height: 100%;
+    background-color: #ccc;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    padding: 100px 20px 20px 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+}
+
+.upperLeft {
+    margin: 5px 0 0 5px;
+}
+
+.logo {
+    padding: 10px 20px;
+    height: 90px;
+    margin-left: 5px;
+    img {
+        width: 150px;
+        display: block;
+    }
+}

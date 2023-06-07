@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.16.4",
+    "@uidotdev/usehooks": "^2.0.1",
     "contentful": "^10.1.4",
     "next": "13.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.62.1"
+    "react-slick": "^0.29.0",
+    "sass": "^1.62.1",
+    "slick-carousel": "^1.8.1"
   }
 }

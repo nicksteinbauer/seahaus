@@ -1,0 +1,120 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick-list {
+    background-color: #000;
+}
+
+.slick-slide > div {
+    height: 700px;
+    @media screen and (min-width: $screen-md) {
+        height: 100vh;
+    }
+    position: relative;
+    .projectImage {
+
+        height: 700px;
+        @media screen and (min-width: $screen-md) {
+            height: 100vh;
+        }
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        
+        justify-content: center;
+        left: 0;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        width: 100%;
+        img {
+            position: absolute;
+            opacity: .85;
+            width: 1200px;
+
+            @media screen and (min-width: $screen-md) {
+                width: 2560px;
+            }
+
+            flex-shrink: 0;
+            max-width: none;
+            
+            
+            z-index: 10;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        //background-color: rgba($color: #000000, $alpha: .5);
+        height: 300px;
+        z-index: 11;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+    }
+}
+
+.titleExcerpt {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    z-index: 12;
+    padding: 0 0 30px 30px;
+    h2 {
+        margin-bottom: 25px;
+    }
+    p {
+        font-weight: 200;
+        margin-bottom: 20px;
+    }
+    .slideLink {
+        color: #000;
+        span {
+            background-color: #fff;
+            margin-right: 5px;
+            padding: 30px;
+        }
+        .arrow {
+            img {
+                transition: transform .4s ease;
+            }
+        }
+        &:hover {
+            .arrow {
+                img {
+                    transform: translateX(6px);
+                }
+            }
+        }
+    }
+}
+
+.slick-dots {
+    bottom: 30px;
+    width: auto;
+    padding-right: 20px;
+    @media screen and (min-width: $screen-md) {
+        width: 225px;
+        padding-right: 0;
+    }
+    right: 0;
+}
+.slick-dots li button:before {
+    font-size: 9px;
+    color: #fff;
+    border: 2px solid transparent;
+    
+    border-radius: 50%;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #fff;
+    border: 2px solid #fff;
+}

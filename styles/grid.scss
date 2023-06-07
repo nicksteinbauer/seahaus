@@ -10,27 +10,10 @@ $screen-xxs: 480px;
 $screen-xxxs: 360px;
 
 
-// Colors
-$ob-red: #701d23;
-$ob-tan: #f1eee9;
-$ob-blue: #0276b2;
-$ob-btblue: #16a4fa;
-$ob-dkgray: #2f3f4e;
-$ob-gray: #374858;
-$ob-hdgray: #405364;
-$ob-ltgray: #828f9e;
-$ob-ltltgray: #efefef;
-$ob-lightest: #f7f7f7;
-$ob-orange: #de6e4b;
-
-
-// Boathouse Colors
-$blue: #004e7a;
-$teal: #1c92a7;
-$gray: #e1e1e1;
-$darkBlue: #16374a;
-
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 // Grid
 
@@ -318,7 +301,7 @@ $darkBlue: #16374a;
 }
 
 .smtext {
-    color: $teal;
+
     align-self: flex-end;
     padding: 0;
     margin: 0 0 10px;

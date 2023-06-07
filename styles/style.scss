@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;1,400&display=swap');
+
+$bodyText: 'Neuton', serif;
+
+body {
+    font-family: $bodyText;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+@import './grid.scss';
+@import './header.scss';
+@import './homeslider.scss';
+
+
+h1 {
+    font-size: 3em;
+    font-weight: 200;
+    @media screen and (min-width: $screen-md) {
+        font-size: 3.6em;
+    }
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: 200;
+    line-height: 1;
+    @media screen and (min-width: $screen-md) {
+        font-size: 3.6em;
+    }
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 200;
+    @media screen and (min-width: $screen-md) {
+        font-size: 1.4em;
+    }
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+ul {
+    margin: 20px 0;
+}

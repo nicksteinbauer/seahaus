@@ -1,23 +1,25 @@
-import Link from "next/link";
+import Logo from "../../public/McFaddenLogo.svg"
+import ContentfulImage from '../ui/ContentfulImage'
+
+
+import HamNew from "../HamNew";
+
 
 const Layout = ({ children }) => {
     return (
         <>
             <header className="header">
-                <nav className="mainNav">
-                    <ul className="flex-md">
-                        <li>
-                            <Link href="/" className="link">
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/posts" className="link">
-                                Posts
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
+                <div className="upperLeft always-flex">
+                    <HamNew />
+                    <div className="logo">
+                        <ContentfulImage
+                            alt='McFadden Logo'
+                            src={Logo}
+                            width='100'
+                            height='100'
+                        />
+                    </div>
+                </div>
             </header>
             <main>
                 {children}
