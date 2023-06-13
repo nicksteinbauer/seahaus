@@ -1,14 +1,15 @@
 import Link from 'next/link'
 
 import ContentfulImage from '../ui/ContentfulImage'
+import Arrow from "../../public/arrow.svg"
 
 const ProjectCard = ({ project }) => {
 
   
   return (
-    <li className=''>
-      <Link href={`/projects/${project.slug}`} aria-label={project.title} className='flex-sm musicLink'>
-        <div className='musicImage'>
+    <li className='indList'>
+      
+        <div className='indImage'>
           <ContentfulImage
             alt={`Cover Image for ${project.title}`}
             src={project.featuredImage.url}
@@ -16,16 +17,24 @@ const ProjectCard = ({ project }) => {
             height={project.featuredImage.height}
           />
         </div>
-        <div className='always-flex musicContent'>
          
-          <div className='excerpt flex-vertical'>
-            <div>
-              <h3 className=''>{project.title}</h3>
-
+          <div className='excerpt always-flex justify'>
+            <h3 className='flex-vertical'><span>{project.title}</span></h3>
+            <div className='slideLinkContainer'>
+              <Link href={`/projects/${project.slug}`} aria-label={project.title} className='slideLink always-flex'>
+                <span className='words'>View</span>
+                <span className='arrow flex-vertical'>
+                  <ContentfulImage
+                      alt='Arrow'
+                      src={Arrow}
+                      width='30'
+                      height='100'
+                  />
+                </span>
+              </Link>
             </div>
           </div>
-        </div>
-      </Link>
+      
     </li>
   )
 }

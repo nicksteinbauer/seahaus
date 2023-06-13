@@ -74,23 +74,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         font-weight: 200;
         margin-bottom: 20px;
     }
-    .slideLink {
-        color: #000;
-        span {
-            background-color: #fff;
-            margin-right: 5px;
-            padding: 30px;
+    
+}
+
+.slideLink {
+    color: $dkgray;
+    span {
+        background-color: #fff;
+        margin-right: 5px;
+        padding: 30px;
+    }
+    .arrow {
+        img {
+            transition: transform .4s ease;
         }
+    }
+    &:hover {
         .arrow {
             img {
-                transition: transform .4s ease;
-            }
-        }
-        &:hover {
-            .arrow {
-                img {
-                    transform: translateX(6px);
-                }
+                transform: translateX(6px);
             }
         }
     }
@@ -110,11 +112,59 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     font-size: 9px;
     color: #fff;
     border: 2px solid transparent;
-    
+    opacity: .75;
     border-radius: 50%;
 }
 
 .slick-dots li.slick-active button:before {
     color: #fff;
     border: 2px solid #fff;
+}
+
+.testimonials {
+    color: #fff;
+    font-weight: 200;
+    position: relative;
+    .slick-list {
+        background-color: #222222;
+        
+    }
+    .slick-slide > div {
+        height: auto;
+        
+        &::after {
+            background: none;
+            height: 0;
+        }
+    }
+    .slideLinkContainer {
+        position: absolute;
+        bottom: 70px;
+        right: 10px;
+    }
+}
+
+.testimonialSlide .testimonialExcerpt {
+    padding: 80px 20px 180px;
+    @media screen and (min-width: $screen-md) {
+        padding: 80px 300px 80px 60px;
+    }
+    @media screen and (min-width: $screen-xxxl) {
+        padding: 80px 100px 80px 60px;
+    }
+    position: relative;
+    &::before {
+        content: '\201C';
+        position: absolute;
+        top: 0;
+        font-size: 8em;
+        font-weight: 400;
+        opacity: .3;
+        line-height: 1;
+        left: 0;
+    }
+}
+
+.testimonialExcerpt {
+    font-size: 1.5em;
 }

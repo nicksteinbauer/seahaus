@@ -4,10 +4,9 @@ const ProjectHeader = ({ project }) => {
   const { title, featuredImage } = project
 
   return (
-    <>
-      <h2>{title}</h2>
-      
-      <div className='imageContainer'>
+    <div className='pageHeader'>
+
+      <div className='pageImage'>
         <ContentfulImage
           alt={`Cover Image for ${title}`}
           src={featuredImage.url}
@@ -15,8 +14,14 @@ const ProjectHeader = ({ project }) => {
           height={featuredImage.height}
         />
       </div>
-      
-    </>
+
+      <div className='excerpt'>
+        <div className='inside-xxl'>
+          <h1 className=''>{title}</h1>
+        </div>
+      </div>
+
+    </div>
   )
 }
 

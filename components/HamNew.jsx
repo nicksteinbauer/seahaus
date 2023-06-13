@@ -3,8 +3,11 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { useEffect } from "react";
 
-import { useClickAway } from "@uidotdev/usehooks";
+import Facebook from "../public/facebook.svg"
+import Instagram from "../public/instagram.svg"
+import ContentfulImage from './ui/ContentfulImage'
 
+import { useClickAway } from "@uidotdev/usehooks";
 
 import Link from "next/link";
 
@@ -77,6 +80,26 @@ export default function HamNew() {
                         </Link>
                     </li>
                 </ul>
+
+                <div className="always-flex social justify-center">
+                    <a href="http://facebook.com">
+                        <ContentfulImage
+                            alt='Facebook Social'
+                            src={Facebook}
+                            width='44'
+                            height='44'
+                        />
+                    </a>
+                    <a href="http://instagram.com">
+                        <ContentfulImage
+                            alt='Instagram Social'
+                            src={Instagram}
+                            width='44'
+                            height='44'
+                        />
+                    </a>
+                </div>
+                
 
             </nav>
         )}

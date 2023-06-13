@@ -1,13 +1,19 @@
 import Head from 'next/head'
+import ContentfulImage from '@/components/ui/ContentfulImage'
+import Arrow from "@/public/arrow.svg"
+
+import Link from 'next/link'
 //import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import ProjectCardSlide from '@/components/projects/ProjectCardSlide'
 
 import Slider from 'react-slick'
+import AboutCard from '@/components/abouts/AboutCard'
+import TestimonialCardSlide from '@/components/testimonials/TestimonialCardSlide'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ projects }) {
+export default function Home({ projects, abouts, testimonials }) {
   const settings = {
     dots: true,
     arrows: false,
@@ -25,13 +31,36 @@ export default function Home({ projects }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='home'>
-        
         <Slider {...settings}>
           {projects.map((project) => (
             <ProjectCardSlide key={project.slug} project={project} />
           ))}
         </Slider>
-        <h1>Home</h1>
+        <section className='about inside-xxl'>
+          {abouts.map((about) => (
+            <AboutCard key={about.slug} about={about} />
+          ))}
+        </section>
+        <section className='testimonials'>
+          <Slider {...settings}>
+            {testimonials.map((testimonial) => (
+              <TestimonialCardSlide key={testimonial.slug} testimonial={testimonial} />
+            ))}
+          </Slider>
+          <div className='slideLinkContainer'>
+          <Link href={`/testimonials`} aria-label="Testimonials" className='slideLink always-flex'>
+            <span className='words'>All Testimonials</span>
+            <span className='arrow flex-vertical'>
+              <ContentfulImage
+                  alt='Arrow'
+                  src={Arrow}
+                  width='30'
+                  height='100'
+              />
+            </span>
+          </Link>
+        </div>
+        </section>
       </main>
     </>
   )
@@ -48,7 +77,14 @@ export async function getStaticProps() {
     body: JSON.stringify({
       query: `
         query {
-          projectCollection {
+          testimonialsCollection(where: { category: "Home" }) {
+            items {
+              title
+              slug
+              excerpt
+            }
+          }
+          project1:projectCollection(where: { category: "Slider" }, limit: 2) {
             items {
               title
               slug
@@ -57,6 +93,33 @@ export async function getStaticProps() {
                 url
                 width
                 height
+              }
+            }
+          }
+          aboutCollection {
+            items {
+              slug
+              title
+              excerpt {
+                json
+              }
+              image1 {
+                url
+                width
+                height
+                description
+              }
+              image2 {
+                url
+                width
+                height
+                description
+              }
+              image3 {
+                url
+                width
+                height
+                description
               }
             }
           }
@@ -71,11 +134,15 @@ export async function getStaticProps() {
   }
 
   const { data } = await result.json();
-  const projects = data.projectCollection.items;
+  const projects = data.project1.items;
+  const abouts = data.aboutCollection.items;
+  const testimonials = data.testimonialsCollection.items;
 
   return {
     props: {
-      projects
+      projects,
+      abouts,
+      testimonials
     }
   }
 

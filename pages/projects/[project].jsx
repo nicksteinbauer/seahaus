@@ -1,10 +1,24 @@
+import GalleryCardSlide from '@/components/projects/GalleryCardSlide'
 import ProjectBody from '@/components/projects/ProjectBody'
 import ProjectHeader from '@/components/projects/ProjectHeader'
 import Skeleton from '@/components/ui/Skeleton'
 import { useRouter } from 'next/router'
 
-export default function ProjectPage({ project }) {
+import Slider from 'react-slick'
+
+
+export default function ProjectPage({ project, gallerys }) {
     const router = useRouter()
+
+    const settings = {
+        dots: true,
+        arrows: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        varaibleWidth: true
+    };
     
     return (
         <>
@@ -14,6 +28,13 @@ export default function ProjectPage({ project }) {
                 <>
                 <ProjectHeader project={project} />
                 <ProjectBody project={project} />
+                <div className='inside-xxl insideGallery'>
+                    <Slider {...settings}>
+                        {gallerys.map((gallery) => (
+                            <GalleryCardSlide key={gallery.slug} gallery={gallery} />
+                        ))}
+                    </Slider>
+                </div>
                 </>
             )}
           </>
@@ -50,6 +71,27 @@ export async function getStaticProps({ params }) {
                         }
                     }
                 }
+                galleryCollection(
+                    where: {
+                      project: {
+                        slug: $slug
+                      }
+                    }
+                    order: slug_ASC
+                  ) {
+                    items {
+                      title
+                      slug
+                      image {
+                        url
+                        width
+                        height
+                      }
+                      project {
+                        slug
+                      }
+                    }
+                  }
             }
         `,
         variables: {
@@ -66,11 +108,13 @@ export async function getStaticProps({ params }) {
     const { data } = await result.json();
 
     const [projectData] = data.projectCollection.items;
-
+    const gallerys = data.galleryCollection.items;
     
 
     return {
-        props: { project: projectData },
+        props: { 
+            project: projectData, 
+            gallerys },
     }
 }
 

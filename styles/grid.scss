@@ -15,6 +15,24 @@ img {
     height: auto;
 }
 
+.floatRight {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.hideThis {
+    opacity: 0;
+    transition: opacity 1.4s ease;
+}
+.hideThis.showThis {
+    opacity: 1;
+}
+
 // Grid
 
 .inside-xxs {
@@ -241,6 +259,9 @@ img {
 
 .justify {
     justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
 }
 
 .gap5 {
