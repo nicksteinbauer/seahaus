@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import ContentfulImage from '../ui/ContentfulImage'
+import ContentfulImageGsap from '../ui/ContentfulImageGsap'
 import Arrow from "../../public/arrow.svg"
 
 const FProjectCard = ({ fproject }) => {
@@ -10,11 +11,12 @@ const FProjectCard = ({ fproject }) => {
     <li className='indList'>
       
         <div className='indImage'>
-          <ContentfulImage
+          <ContentfulImageGsap
             alt={`Cover Image for ${fproject.title}`}
             src={fproject.featuredImage.url}
             width={fproject.featuredImage.width}
             height={fproject.featuredImage.height}
+            className='hideThis'
           />
         </div>
          
