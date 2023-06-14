@@ -6,6 +6,7 @@ import Link from 'next/link'
 //import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import ProjectCardSlide from '@/components/projects/ProjectCardSlide'
+import FProjectCard from '@/components/projects/FProjectCard'
 
 import Slider from 'react-slick'
 import AboutCard from '@/components/abouts/AboutCard'
@@ -13,7 +14,7 @@ import TestimonialCardSlide from '@/components/testimonials/TestimonialCardSlide
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ projects, abouts, testimonials }) {
+export default function Home({ projects, abouts, testimonials, fprojects }) {
   const settings = {
     dots: true,
     arrows: false,
@@ -61,6 +62,30 @@ export default function Home({ projects, abouts, testimonials }) {
           </Link>
         </div>
         </section>
+        <div className='projectMap inside-xxl'>
+          <div className='text-center'><h2>Latest Projects</h2></div>
+          
+          <div className='linkFix'>
+          <Link href={`/projects`} aria-label="Projects" className='slideLink gray always-flex'>
+            <span className='words'>All Projects</span>
+            <span className='arrow flex-vertical'>
+              <ContentfulImage
+                  alt='Arrow'
+                  src={Arrow}
+                  width='30'
+                  height='100'
+              />
+            </span>
+          </Link>
+          </div>
+
+          <ul className='projectGrid auto-grid'>
+            {fprojects.map((fproject) => (
+              <FProjectCard key={fproject.slug} fproject={fproject} />
+            ))}
+          </ul>
+
+        </div>
       </main>
     </>
   )
@@ -84,7 +109,19 @@ export async function getStaticProps() {
               excerpt
             }
           }
-          project1:projectCollection(where: { category: "Slider" }, limit: 2) {
+          project1:projectCollection(where: { category: "Slider" }) {
+            items {
+              title
+              slug
+              excerpt
+              featuredImage {
+                url
+                width
+                height
+              }
+            }
+          }
+          project2:projectCollection(where: { category: "Featured" }, limit: 2) {
             items {
               title
               slug
@@ -135,6 +172,7 @@ export async function getStaticProps() {
 
   const { data } = await result.json();
   const projects = data.project1.items;
+  const fprojects = data.project2.items;
   const abouts = data.aboutCollection.items;
   const testimonials = data.testimonialsCollection.items;
 
@@ -142,7 +180,8 @@ export async function getStaticProps() {
     props: {
       projects,
       abouts,
-      testimonials
+      testimonials,
+      fprojects
     }
   }
 

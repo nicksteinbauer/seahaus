@@ -8,7 +8,7 @@
 .hamburger, .logo {
     background-color: #fff;
     position: relative;
-    z-index: 10;
+    z-index: 110;
 }
 button.hamburger {
     border: none;
@@ -79,7 +79,7 @@ button.hamburger {
     background-color: #ccc;
     left: 0;
     top: 0;
-    z-index: 5;
+    z-index: 100;
     padding: 100px 20px 20px 20px;
     text-align: center;
     font-size: 2em;

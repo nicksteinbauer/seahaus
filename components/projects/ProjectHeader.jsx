@@ -1,4 +1,7 @@
+
+import Link from 'next/link'
 import ContentfulImage from '../ui/ContentfulImage'
+import Arrow from "../../public/arrow.svg"
 
 const ProjectHeader = ({ project }) => {
   const { title, featuredImage } = project
@@ -15,11 +18,27 @@ const ProjectHeader = ({ project }) => {
         />
       </div>
 
-      <div className='excerpt'>
-        <div className='inside-xxl'>
-          <h1 className=''>{title}</h1>
+      <div className='titleExcerpt flex-sm justify'>
+          <div>
+            <h2 className=''>{title}</h2>
+          </div>
+          
+          <div className='slideLinkContainer'>
+            <Link href={`/projects`} aria-label={project.title} className='slideLink always-flex'>
+              <span className='words'>All Projects</span>
+              <span className='arrow flex-vertical'>
+                <ContentfulImage
+                    alt='Arrow'
+                    src={Arrow}
+                    width='30'
+                    height='100'
+                />
+              </span>
+            </Link>
+          </div>
+          
         </div>
-      </div>
+
 
     </div>
   )

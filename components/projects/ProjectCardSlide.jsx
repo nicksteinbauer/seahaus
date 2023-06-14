@@ -1,7 +1,5 @@
 import Link from 'next/link'
-
 import ContentfulImage from '../ui/ContentfulImage'
-
 import Arrow from "../../public/arrow.svg"
 
 const ProjectCardSlide = ({ project }) => {

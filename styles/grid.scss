@@ -273,10 +273,10 @@ img {
 
 .auto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
-    @media screen and (min-width: $screen-md) {
-        grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    @media screen and (min-width: $screen-sm) {
+        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
     }
     grid-gap: 14px;
 }

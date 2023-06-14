@@ -28,7 +28,7 @@ export default function ProjectPage({ project, gallerys }) {
                 <>
                 <ProjectHeader project={project} />
                 <ProjectBody project={project} />
-                <div className='inside-xxl insideGallery'>
+                <div className='inside-lg insideGallery'>
                     <Slider {...settings}>
                         {gallerys.map((gallery) => (
                             <GalleryCardSlide key={gallery.slug} gallery={gallery} />

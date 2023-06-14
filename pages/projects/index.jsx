@@ -29,7 +29,7 @@ const Projects = ({ mainProjects, stickyProjects }) => {
               <ProjectPageCard key={project.slug} project={project} />
           ))}
           
-          <div className='projectMap forty-five inside-xxl'>
+          <div className='projectMap inside-xxl'>
             <ul className='projectGrid auto-grid'>
               {mainProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
