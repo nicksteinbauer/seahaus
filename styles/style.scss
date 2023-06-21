@@ -1,41 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;1,400&display=swap');
-
-$bodyText: 'Neuton', serif;
-$dkgray: #3a3a3c;
-$ltgray: #c8c9cb;
+$bodyText: 'Roboto', sans-serif;
+$displayText: 'Merriweather', serif;
+$dkgray: #666452;
+$ltgray: #faf9f3;
 
 body {
     font-family: $bodyText;
     font-size: 20px;
     line-height: 1.4;
     color: $dkgray;
-    background-color: #fff;
+    background-color: $ltgray;
 }
 
+@font-face {
+    font-family: 'adedisplay';
+    src: url('../public/ade-display_2-webfont.woff2') format('woff2'),
+         url('../public/ade-display_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'adedisplay';
+}
+
+
 @import './grid.scss';
-@import './header.scss';
-@import './homeslider.scss';
-@import './about.scss';
-@import './page.scss';
-@import './contact.scss';
+@import './layout.scss';
+// @import './homeslider.scss';
+// @import './about.scss';
+// @import './page.scss';
+// @import './contact.scss';
 
 
 h1 {
-    font-size: 2.8em;
+    font-size: 2.0em;
     font-weight: 200;
     line-height: 1;
     @media screen and (min-width: $screen-md) {
-        font-size: 3.2em;
+        font-size: 2.4em;
     }
 }
 
 h2 {
-    font-size: 2.6em;
+    font-size: 1.8em;
     font-weight: 200;
     line-height: 1;
     @media screen and (min-width: $screen-md) {
-        font-size: 3.2em;
+        font-size: 2em;
     }
 }
 

@@ -50,26 +50,8 @@ export async function getStaticProps() {
             items {
               slug
               title
-              content {
+              excerpt {
                 json
-              }
-              image1 {
-                url
-                width
-                height
-                description
-              }
-              image2 {
-                url
-                width
-                height
-                description
-              }
-              image3 {
-                url
-                width
-                height
-                description
               }
             }
           }
