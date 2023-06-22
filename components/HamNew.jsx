@@ -3,13 +3,15 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { useEffect } from "react";
 
-import Facebook from "../public/facebook.svg"
-import Instagram from "../public/instagram.svg"
-import ContentfulImage from './ui/ContentfulImage'
+// import Facebook from "../public/facebook.svg"
+// import Instagram from "../public/instagram.svg"
+// import ContentfulImage from './ui/ContentfulImage'
 
 import { useClickAway } from "@uidotdev/usehooks";
 
-import Link from "next/link";
+//import Link from "next/link";
+
+import ContactForm from "./contact/ContactForm";
 
 
 export default function HamNew() {
@@ -39,12 +41,12 @@ export default function HamNew() {
         
         {MobileMenu && (
             <div className="navigation flex-vertical">
-                <div className="modalWindow inside-md">
-                    <nav ref={ref} className="modalRef">
-                        Contact Form
+                <div className="modalWindow">
+                    <nav ref={ref} className="modalRef inside-xxs">
+                        <ContactForm />
                     </nav>
                     
-                    <div className="inModal">
+                    <div className="inModal inside-xxs">
                         <button className="hamburger">
                             Close
                         </button>

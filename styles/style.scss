@@ -22,10 +22,7 @@ body {
 
 }
 
-h1 {
-    text-transform: uppercase;
-    font-family: 'adedisplay';
-}
+
 
 
 @import './grid.scss';
@@ -37,6 +34,8 @@ h1 {
 
 
 h1 {
+    text-transform: uppercase;
+    font-family: 'adedisplay';
     font-size: 2.0em;
     font-weight: 200;
     line-height: 1;
@@ -46,6 +45,8 @@ h1 {
 }
 
 h2 {
+    text-transform: uppercase;
+    font-family: 'adedisplay';
     font-size: 1.8em;
     font-weight: 200;
     line-height: 1;
@@ -55,6 +56,8 @@ h2 {
 }
 
 h3 {
+    text-transform: uppercase;
+    font-family: 'adedisplay';
     font-size: 1.2em;
     font-weight: 200;
     @media screen and (min-width: $screen-md) {

@@ -48,12 +48,35 @@
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
     background: rgba($color: #000000, $alpha: .8);
-    .modalWindow {
+    .modalRef {
         background-color: $ltgray;
-        
+        padding: 20px 20px 60px;
     }
     .modalWindow {
         position: relative;
     }
+    .inModal {
+        .hamburger {
+            position: relative;
+            top: -40px;
+        }
+    }
+    .actualForm {
+        text-align: left;
+    }
     
+    .mb-3 {
+        margin: 5px 0;
+        label {
+            flex: 0 0 100px
+        }
+        input, textarea {
+            flex: 1;
+            padding: 4px;
+            font-family: $bodyText;
+        }
+        textarea {
+            height: 100px;
+        }
+    }
 }

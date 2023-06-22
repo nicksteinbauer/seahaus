@@ -104,10 +104,10 @@ export default class ContactForm extends Component {
     const { data, errors } = this.state;
     return (
         <div id="contact-form" className="forty-nine">
-          <h3>Contact McFadden Design</h3>
-        <Form onSubmit={this.handleSubmit}>
+          <h3>Contact SeaHaus</h3>
+          <Form onSubmit={this.handleSubmit} className='actualForm'>
             
-                <FormGroup className="padding">
+                <FormGroup className="padding flex-sm">
                     <Label className="text-muted" for="name">Name</Label>
                     <Input 
                         type="text"
@@ -120,7 +120,7 @@ export default class ContactForm extends Component {
                      />
                     <FormFeedback>{errors.name}</FormFeedback>
                 </FormGroup>
-                <FormGroup className="padding">
+                <FormGroup className="padding flex-sm">
                     <Label className="text-muted" for="email">Email</Label>
                     <Input 
                         id="email"
@@ -134,7 +134,7 @@ export default class ContactForm extends Component {
                 </FormGroup>
             
             
-            <FormGroup className="padding">
+            <FormGroup className="padding flex-sm">
                 <Label className="text-muted" for="subject">Subject</Label>
                 <Input 
                     type="text"
@@ -147,7 +147,7 @@ export default class ContactForm extends Component {
                 />
                 <FormFeedback>{errors.subject}</FormFeedback>
             </FormGroup>
-            <FormGroup className="padding">
+            <FormGroup className="padding flex-sm">
                 <Label className="text-muted" for="message">Message</Label>
                 <Input 
                     type="textarea"
@@ -170,7 +170,7 @@ export default class ContactForm extends Component {
               <FormFeedback className={this.state.isVerified === false ? "feedback-active" : "feedback-inactive" }>Comfirm that you are human.</FormFeedback>
             </FormGroup>
             <FormGroup className="padding">
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="hamburger">
                   Submit
                 </Button>
             </FormGroup>
