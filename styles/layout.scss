@@ -50,7 +50,7 @@
     background: rgba($color: #000000, $alpha: .8);
     .modalRef {
         background-color: $ltgray;
-        padding: 20px 20px 60px;
+        padding: 20px;
     }
     .modalWindow {
         position: relative;
@@ -74,9 +74,60 @@
             flex: 1;
             padding: 4px;
             font-family: $bodyText;
+            background-color: #fff;
+            color: $dkgray;
+            width: 100%;
+            border: 1px solid $dkgray;
         }
         textarea {
             height: 100px;
         }
     }
+}
+
+button.hamburgerClose {
+    border: none;
+    
+}
+.hamburgerClose {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $dkgray;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    &:hover {
+        .line {
+            width: 100%;
+        }
+        
+    }
+}
+
+.makeRelative {
+    position: relative;
+}
+
+.closeContainer {
+    width: 100%;
+}
+.close {
+    height: 2px;
+    background-color: $ltgray;
+    width: 100%;
+    position: relative;
+    top: 0;
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.close1 {
+    rotate: 45deg;
+    top: 2px;
+}
+.close2 {
+    rotate: -45deg;
 }

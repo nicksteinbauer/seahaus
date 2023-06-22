@@ -42,14 +42,16 @@ export default function HamNew() {
         {MobileMenu && (
             <div className="navigation flex-vertical">
                 <div className="modalWindow">
-                    <nav ref={ref} className="modalRef inside-xxs">
-                        <ContactForm />
-                    </nav>
-                    
-                    <div className="inModal inside-xxs">
-                        <button className="hamburger">
-                            Close
+                    <div className="inside-xxs makeRelative">
+                        <button className="hamburgerClose flex-vertical active">
+                            <div className="closeContainer">
+                                <div className="close close1"></div>
+                                <div className="close close2"></div>
+                            </div>
                         </button>
+                        <nav ref={ref} className="modalRef">
+                            <ContactForm />
+                        </nav>
                     </div>
                 </div>
             </div> 
