@@ -21,7 +21,7 @@ export default function Home({ abouts }) {
       </Head>
       <main className='home'>
         <div className='video-contain inside-xxl'>
-          <video autoPlay='autoplay' muted loop='loop' id='bgvid'>
+          <video autoPlay='autoplay' muted loop='loop' playsInline='playsinline' id='bgvid'>
             <source src={require('../public/SeaHausFadeToTan.mp4')} type='video/mp4' />
           </video>
         </div>
