@@ -133,10 +133,20 @@ button.hamburgerClose {
     rotate: -45deg;
 }
 
-.feedback-active {
+.feedback-active, .feedback-inactive {
     font-size: .8em;
 }
 
 #g-recaptcha {
     margin: 10px 0;
+}
+
+.invalid-feedback {
+    width: 100%;
+    font-size: .8em;
+    font-weight: 300;
+    color: red;
+    &::before {
+        content: '*';
+    }
 }
