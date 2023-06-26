@@ -65,7 +65,7 @@ export default class ContactForm extends Component {
         let errors = {};
 
         //@ts-ignore
-        if (data.name === '') errors.name = 'Name required'; if (!isEmail(data.email)) errors.email = 'Email must be valid'; if (data.email === '') errors.email = 'Email required'; if (data.subject === '') errors.subject = 'Subject required'; if (data.message === '') errors.message = 'Message required';
+        if (data.name === '') errors.name = '* Name required'; if (!isEmail(data.email)) errors.email = '* Email must be valid'; if (data.email === '') errors.email = '* Email required'; if (data.subject === '') errors.subject = '* Subject required'; if (data.message === '') errors.message = '* Message required';
         return errors;
     }
   

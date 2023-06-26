@@ -146,7 +146,5 @@ button.hamburgerClose {
     font-size: .8em;
     font-weight: 300;
     color: red;
-    &::before {
-        content: '*';
-    }
+    
 }
