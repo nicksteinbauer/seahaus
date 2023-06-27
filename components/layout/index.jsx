@@ -1,7 +1,7 @@
 import Logo from "../../public/SeaHausLogo.svg"
 import ContentfulImage from '../ui/ContentfulImage'
 
-import Facebook from "../../public/facebook.svg"
+//import Facebook from "../../public/facebook.svg"
 import Instagram from "../../public/instagram.svg"
 
 
@@ -31,15 +31,15 @@ const Layout = ({ children }) => {
                 <div className="socialFooter flex-vertical">
 
                     <div className="always-flex justify-center">
-                        <a href="http://facebook.com">
+                        {/* <a href="http://facebook.com">
                             <ContentfulImage
                                 alt='Facebook Social'
                                 src={Facebook}
                                 width='44'
                                 height='44'
                             />
-                        </a>
-                        <a href="http://instagram.com">
+                        </a> */}
+                        <a href="https://www.instagram.com/seahaus.exuma/">
                             <ContentfulImage
                                 alt='Instagram Social'
                                 src={Instagram}

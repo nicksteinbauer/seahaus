@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { Inter } from 'next/font/google'
 
-import Script from 'next/script'
+//import Script from 'next/script'
 
 import AboutCard from '@/components/abouts/AboutCard'
 
