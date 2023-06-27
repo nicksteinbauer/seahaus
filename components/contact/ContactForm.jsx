@@ -89,7 +89,7 @@ export default class ContactForm extends Component {
             })
 
             Swal.fire({
-              title: "Email Successfully Sent SeaHaus",
+              title: "Email Successfully Sent to SeaHaus",
               icon: "success",
             });
         } else {
