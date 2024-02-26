@@ -6,10 +6,33 @@ import ContentfulImageGsap from '../ui/ContentfulImageGsap'
 
 const StayCard = ({ stay }) => {
 
+  let stayLink;
+
+  if (stay.category == "Great Room & Kitchen") {
+    stayLink = "greatroom";
+  } else if (stay.category == "Primary Suite") {
+    stayLink = "primarysuite";
+  } else if (stay.category == "Primary Bath") {
+    stayLink = "primarybath";
+  } else if (stay.category == "Guest Bedroom") {
+    stayLink = "guestbedroom";
+  } else if (stay.category == "Bunk Room") {
+    stayLink = "bunkroom";
+  } else if (stay.category == "Dual Access Ensuite") {
+    stayLink = "dualaccessensuite";
+  } else if (stay.category == "Powder Room") {
+    stayLink = "powderroom";
+  } else if (stay.category == "Beachfront Veranda") {
+    stayLink = "beachfronveranda";
+  } else if (stay.category == "Beach") {
+    stayLink = "beach";
+  } else {
+    stayLink = ""
+  }
   
   return (
     <li className='indList'>
-      <Link href={`/stay/${stay.slug}`} aria-label={stay.title} className='slideLink'>
+      <Link href={`/stay/${stayLink}`} aria-label={stay.title} className='slideLink'>
         <div className='indImage'>
         {stay.imageThumb && (
           <ContentfulImageGsap
