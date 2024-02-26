@@ -19,34 +19,16 @@ import image4 from "public/gallery/JustyPeachy4.jpg";
 import image5 from "public/gallery/JustyPeachy5.jpg";
 import image6 from "public/gallery/JustyPeachy6.jpg";
 import image7 from "public/gallery/JustyPeachy7.jpg";
-import image8 from "public/gallery/JustyPeachy8.jpg";
-import image9 from "public/gallery/JustyPeachy9.jpg";
 
 
+const images = [
+  image1, image2, image3, image4, image5, image6, image7
+];
 
 const GreatRoom = ({ stickyStays, mainStays }) => {
   const [open, setOpen] = useState(false);
 
   
-  // const images = [
-  //   {mainStays.map((stay) => (
-  //     <>{stay.imageThumb.url}</>
-  //    ))};
-  // ];
-
-  const ImgMap = ({mainStays}) => {
-    return (
-      <>
-      {mainStays.map((stay) => (
-       <>{stay.imageThumb.url},</>
-      ))};
-      </>
-    );
-  }
-  
-const images = [
-   ImgMap
-];
 
 
   return (
@@ -75,7 +57,6 @@ const images = [
                 <StayCardInterior 
                   key={stay.slug} 
                   stay={stay} 
-                  onClick={({ index: current }) => setIndex(current)}
                 />
               ))}
             </ul>
@@ -87,11 +68,13 @@ const images = [
           slides={images}
           render={{ slide: NextJsImage }}
         />
-        <div>
-        {mainStays.map((stay) => (
-        <>{stay.imageThumb.url},</>
-        ))};
+        
+        <div className='rightHere'>
+          {mainStays.map((stay) => (
+            <>{stay.image.url}</>
+          ))};
         </div>
+        
       </section> 
     </main>
   )
@@ -104,17 +87,17 @@ const StayCardInterior = ({ stay }) => {
   
   return (
     <li className='indList'>
-        <div className='indImage'>
-        {stay.imageThumb && (
-          <ContentfulImageGsap
-            alt={`Cover Image for ${stay.title}`}
-            src={stay.imageThumb.url}
-            width={stay.imageThumb.width}
-            height={stay.imageThumb.height}
-            className='hideThis'
-          />
-        )}
-        </div>
+      <div className='indImage'>
+      {stay.imageThumb && (
+        <ContentfulImageGsap
+          alt={`Cover Image for ${stay.title}`}
+          src={stay.imageThumb.url}
+          width={stay.imageThumb.width}
+          height={stay.imageThumb.height}
+          className='hideThis'
+        />
+      )}
+      </div>
     </li>
   )
 }
@@ -143,12 +126,17 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Great Room & Kitchen", featured:false, sticky:false }) {
+          mainStay:stayCollection(where: { category: "Great Room & Kitchen", sticky:false }) {
             items {
               title
               slug
               category
               imageThumb {
+                url
+                width
+                height
+              }
+              image {
                 url
                 width
                 height
