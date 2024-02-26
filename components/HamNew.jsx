@@ -34,7 +34,7 @@ export default function HamNew() {
     
     <nav>
         {!MobileMenu && (
-        <button onClick={()=>setMobileMenu(!MobileMenu)} className="hamburger">
+        <button onClick={()=>setMobileMenu(!MobileMenu)} className="hamburgerFooter">
             Contact Us
         </button>
         )}

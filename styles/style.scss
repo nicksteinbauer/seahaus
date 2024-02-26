@@ -3,6 +3,7 @@
 $bodyText: 'Roboto', sans-serif;
 $displayText: 'Merriweather', serif;
 $dkgray: #666452;
+$gray: #d5d3c1;
 $ltgray: #faf9f3;
 
 body {
@@ -27,6 +28,8 @@ body {
 
 @import './grid.scss';
 @import './layout.scss';
+@import './nav.scss';
+@import './pages.scss';
 // @import './homeslider.scss';
 // @import './about.scss';
 // @import './page.scss';
@@ -58,10 +61,10 @@ h2 {
 h3 {
     text-transform: uppercase;
     font-family: 'adedisplay';
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 200;
     @media screen and (min-width: $screen-md) {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 }
 

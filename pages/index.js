@@ -28,7 +28,7 @@ export default function Home({ abouts }) {
 
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
       </Head>
-      <main className='home'>
+      <main className='home all'>
         <div className='video-contain inside-xxl'>
           <video autoPlay='autoplay' muted loop='loop' playsInline='playsinline' id='bgvid'>
             <source src={require('../public/SeaHausFadeToTan.mp4')} type='video/mp4' />

@@ -1,6 +1,6 @@
 import RichText from '../RichText'
 
-const ProjectBody = ({ project }) => {
+const StayBody = ({ project }) => {
   const { content } = project
 
   return (
@@ -12,4 +12,4 @@ const ProjectBody = ({ project }) => {
   )
 }
 
-export default ProjectBody
+export default StayBody

@@ -1,0 +1,45 @@
+.pageImage {
+    padding-top: 20px;
+    img {
+        display: block;
+    }
+}
+
+.mainTitle {
+    margin-top: 20px;
+    h1 {
+        border-bottom: 1px solid $gray;
+        padding-bottom: 10px;
+    }
+}
+
+.galleryTitle {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    .smol {
+        font-size: .8em;
+    }
+}
+
+.projectGrid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.indList {
+    .excerpt {
+        border-bottom: 1px solid $gray;
+        h3 {
+            padding-top: 5px;
+        }
+    }
+}
+
+.indImage {
+    img {
+        display: block;
+    }
+}

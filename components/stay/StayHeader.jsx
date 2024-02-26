@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ContentfulImage from '../ui/ContentfulImage'
 import Arrow from "../../public/arrow.svg"
 
-const ProjectHeader = ({ project }) => {
+const StayHeader = ({ project }) => {
   const { title, featuredImage } = project
 
   return (
@@ -44,4 +44,4 @@ const ProjectHeader = ({ project }) => {
   )
 }
 
-export default ProjectHeader
+export default StayHeader

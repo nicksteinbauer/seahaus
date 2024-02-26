@@ -1,29 +1,15 @@
-import Logo from "../../public/SeaHausLogo.svg"
 import ContentfulImage from '../ui/ContentfulImage'
 
 //import Facebook from "../../public/facebook.svg"
 import Instagram from "../../public/instagram.svg"
+import Header from "./Header";
 
 
-import Link from "next/link";
 
 const Layout = ({ children }) => {
     return (
         <>
-            <header className="header inside-xxl">
-                <div className="always-flex justify-center">
-                <div className="logo">
-                    <Link href="/">
-                    <ContentfulImage
-                        alt='SeaHaus Logo'
-                        src={Logo}
-                        width='200'
-                        height='200'
-                    />
-                    </Link>
-                </div>
-                </div>
-            </header>
+            <Header />
             <main>
                 {children}
             </main>

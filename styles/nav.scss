@@ -1,0 +1,215 @@
+.logo {
+    padding: 14px 0 10px;
+    img {
+        width: 120px;
+        @media screen and (min-width: $screen-sm) {
+            width: 200px;
+        }
+    }
+    @media screen and (min-width: $screen-sm) {
+        padding: 14px 0 10px;
+    }
+}
+
+.header {
+    position: fixed;
+    background-color: $ltgray;
+    width: 100%;
+    border-bottom: 1px solid $gray;
+    @media screen and (min-width: $screen-sm) {
+        position: relative;
+        margin-bottom: 44px;
+        border-bottom: none;
+    }
+   
+}
+
+#Nav {
+    display: none;
+    @media screen and (min-width: $screen-sm) {
+        display: block;
+    }
+}
+
+.lowerHeader {
+    position: absolute;
+    width: 100%;
+    margin-top: -44px;
+    transition: margin-top .5s ease;
+    background-color: $ltgray;
+    z-index: 10;
+}
+
+.lowerHeader.active {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+}
+
+.mainNav {
+    ul {
+        li {
+            //display: inline-block;
+            a {
+                display: block;
+                padding: 5px 14px;
+                font-weight: 200;
+                font-size: 16px;
+                border-radius: 16px;
+                margin: 5px;
+                transition: all .3s ease;
+            }
+            a:link, a:active, a:visited {
+                background-color: transparent;
+                color: $dkgray;
+            }
+            a:hover {
+                background-color: $dkgray;
+                color: $ltgray;
+            }
+        }
+        li.reserve {
+            a:link, a:active, a:visited {
+                background-color: $ltgray;
+                @media screen and (min-width: $screen-sm) {
+                    background-color: $gray;
+                }
+                color: $dkgray;
+            }
+            a:hover {
+                background-color: $dkgray;
+                color: $ltgray;
+            }
+        }
+        li.palmLogo {
+            a {
+                padding: 0;
+                margin-top: 4px;
+                margin-bottom: 0;
+            }
+            a:hover {
+                background-color: transparent;
+            }
+            svg {
+                width: 36px;
+                //height: 26.93px;
+                display: inline-block;
+            }
+        }
+    }
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+}
+
+#palmLogo {
+    fill:#676450;
+}
+
+$height-icon: 16px;
+$width-line: 30px;
+$height-line: 3.5px;
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateX: 0;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: calc($height-icon / 2);
+$translateX: 0;
+.hamburger {
+  cursor: pointer;
+  width: 46px;
+  position: fixed;
+  right: 10px;
+  top: 45px;
+  z-index: 10000;
+  @media screen and (min-width: $screen-sm) {
+    display: none;
+  }
+}
+
+
+.ham-trigger {
+  //padding: 0 30px;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.ham-button {
+  position: relative;
+  width: $width-line;
+  height: $height-icon;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  .line {
+    display: block;
+    background: $dkgray;
+
+    width: $width-line;
+    height: $height-line;
+    position: absolute;
+
+    //border-radius: calc($height-line / 2);
+    transition: all $transition-time;
+    -webkit-transition: all $transition-time;
+    -moz-transition: all $transition-time;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    &.line-1 {
+      top: 0;
+    }
+    &.line-2 {
+      top: 50%;
+    }
+    &.line-3 {
+      top: 100%;
+    }
+  }
+  &:hover,
+  &:focus {
+    .line-1 {
+      transform: translateY(calc($height-line / 2 * -1));
+      -webkit-transform: translateY(calc($height-line / 2 * -1));
+      -moz-transform: translateY(calc($height-line / 2 * -1));
+    }
+    .line-3 {
+      transform: translateY(calc($height-line / 2));
+      -webkit-transform: translateY(calc($height-line / 2));
+      -moz-transform: translateY(calc($height-line / 2));
+    }
+  }
+  &.active {
+    .line-1 {
+      transform: translateY($translateY) translateX($translateX)
+        rotate($rotation);
+      -webkit-transform: translateY($translateY) translateX($translateX)
+        rotate($rotation);
+      -moz-transform: translateY($translateY) translateX($translateX)
+        rotate($rotation);
+    }
+    .line-2 {
+      opacity: 0;
+    }
+    .line-3 {
+      transform: translateY($translateY * -1) translateX($translateX)
+        rotate($rotation * -1);
+      -webkit-transform: translateY($translateY * -1) translateX($translateX)
+        rotate($rotation * -1);
+      -moz-transform: translateY($translateY * -1) translateX($translateX)
+        rotate($rotation * -1);
+    }
+  }
+}
+
+.mobileNav {
+    position: fixed;
+    background-color: $gray;
+    top: 112px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding-top: 20px;
+}
