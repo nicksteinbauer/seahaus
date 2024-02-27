@@ -57,7 +57,7 @@ export async function getStaticProps() {
       query: `
         query {
           
-          aboutCollection ( where: { category: "Home" }, limit: 1) {
+          aboutCollection( where: { category: "Home" }, limit: 1) {
             items {
               slug
               title

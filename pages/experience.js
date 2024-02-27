@@ -4,8 +4,7 @@ import { Inter } from 'next/font/google'
 
 //import Script from 'next/script'
 
-import AboutCard from '@/components/abouts/AboutCard'
-
+import ExperienceCard from '@/components/abouts/ExperienceCard'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ abouts }) {
@@ -29,14 +28,10 @@ export default function Home({ abouts }) {
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
       </Head>
       <main className='home all'>
-        <div className='video-contain inside-xxl'>
-          <video autoPlay='autoplay' muted loop='loop' playsInline='playsinline' id='bgvid'>
-            <source src={require('../public/SeaHausFadeToTan.mp4')} type='video/mp4' />
-          </video>
-        </div>
+        
         <section className='about inside-md text-center'>
           {abouts.map((about) => (
-            <AboutCard key={about.slug} about={about} />
+            <ExperienceCard key={about.slug} about={about} />
           ))}
         </section>
         
@@ -57,11 +52,14 @@ export async function getStaticProps() {
       query: `
         query {
           
-          aboutCollection(where: { category: "Bunk Room", categorySticky:true }, limit: 1) {
+          aboutCollection( where: { category: "Experience" }, limit: 1) {
             items {
               slug
               title
               excerpt {
+                json
+              }
+              content {
                 json
               }
             }
