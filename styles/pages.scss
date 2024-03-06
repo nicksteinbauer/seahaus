@@ -6,17 +6,23 @@
 }
 // This will need to be deleted once the gallery is fixed
 
-
+main.page {
+    padding-top: 132px;
+    @media screen and (min-width: $screen-sm) {
+        padding-top: 20px;
+    }
+    
+}
 
 .pageImage {
-    padding-top: 20px;
+    padding-bottom: 20px;
     img {
         display: block;
     }
 }
 
 .mainTitle {
-    margin-top: 20px;
+    //margin-top: 20px;
     h1 {
         border-bottom: 1px solid $gray;
         padding-bottom: 10px;
@@ -52,4 +58,60 @@
     img {
         display: block;
     }
+}
+
+.featured1, .featured2 {
+    img {
+        padding: 5px;
+        @media screen and (min-width: $screen-sm) {
+            padding: 10px;
+        }
+    }
+}
+
+.galleryCard {
+    padding: 40px 0;
+    @media screen and (min-width: $screen-sm) {
+        padding: 100px 0;
+    }
+    .content {
+        padding: 40px 10px 10px;
+        @media screen and (min-width: $screen-sm) {
+            padding: 10px;
+        }
+    }
+    
+}
+
+.noShow {
+    transition: opacity .6s ease-in-out;
+    opacity: 0;
+}
+.noShow.showThis {
+    opacity: 1;
+}
+
+.galleryCard:nth-child(2n) {
+    .sixty {
+        order: 2;
+    }
+    .forty {
+        order: 1;
+    }
+}
+
+.ratesbooking {
+    justify-content: space-around;
+}
+
+.whiteBack {
+    background-color: #fff;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid $dkgray;
+
+}
+
+.pushDown {
+    padding-top: 30px;
 }

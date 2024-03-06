@@ -6,11 +6,11 @@ import StayPageCard from '@/components/stay/StayPageCard'
 import { useState } from "react"
 
 
-import Lightbox from "yet-another-react-lightbox";
+//import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-import NextJsImage from '@/components/stay/NextJsImage';
+//import NextJsImage from '@/components/stay/NextJsImage';
 import image1 from "public/gallery/JustyPeachy1.jpg";
 import image2 from "public/gallery/JustyPeachy2.jpg";
 import image3 from "public/gallery/JustyPeachy3.jpg";
@@ -61,13 +61,13 @@ const BeachfrontVeranda = ({ stickyStays, mainStays }) => {
             </ul>
           </div>
         </div>
-        <Lightbox
+        {/* <Lightbox
           open={open}
           close={() => setOpen(false)}
           slides={images}
           render={{ slide: NextJsImage }}
         />
-        
+         */}
         
       </section> 
     </main>

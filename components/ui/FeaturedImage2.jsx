@@ -8,22 +8,26 @@ const contentfulLoader = ({ src, width, quality }) => {
   return `${src}?w=${width}&q=${quality || 75}`
 }
 
-const ContentfulImageGsap = props => {
-  let animateThis1 = useRef(null);
+const FeaturedImage2 = props => {
+  let animateDn = useRef(null);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(animateThis1, {
+    gsap.to(animateDn, {
       scrollTrigger: {
-        trigger: animateThis1,
-        toggleClass: "showThis"
+        trigger: animateDn,
+        start: '100 bottom',
+        scrub: 1,
       },
       duration: 2,
+      x: '0',
+      y: '50',
+      ease: 'linear',
       
   });
 
 });
-  return <Image loader={contentfulLoader} {...props} ref={(el1) => { animateThis1 = el1; }} />
+  return <Image className='imgContain' loader={contentfulLoader} {...props} ref={(el1) => { animateDn = el1; }} />
 }
 
-export default ContentfulImageGsap
+export default FeaturedImage2

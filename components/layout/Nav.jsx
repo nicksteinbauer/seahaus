@@ -33,10 +33,10 @@ function Nav() {
                             <Link href="/stay">Stay</Link>
                         </li>
                         <li>
-                            <Link href="/">Experience</Link>
+                            <Link href="/experience">Experience</Link>
                         </li>
                         <li>
-                            <Link href="/">Rates &amp; Booking</Link>
+                            <Link href="/ratesbooking">Rates &amp; Booking</Link>
                         </li>
                         <li className="reserve">
                             <Link href="/">Reserve Now</Link>

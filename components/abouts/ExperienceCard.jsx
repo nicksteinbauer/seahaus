@@ -4,32 +4,40 @@ import RichText from '../RichText'
 import ContentfulImage from '../ui/ContentfulImage'
 
 
-const ExperienceCard = ({ about }) => {
+const ExperienceCard = ({ firstOne }) => {
     return (
         <>
             <div className='pageHeader'>
-                {about.image && (
+                {firstOne.featuredImage && (
                 <div className='pageImage inside-xxl'>
                     <ContentfulImage
-                        alt={`Cover Image for ${about.title}`}
-                        src={about.image.url}
-                        width={about.image.width}
-                        height={about.image.height}
+                        alt={`Cover Image for ${firstOne.title}`}
+                        src={firstOne.featuredImage.url}
+                        width={firstOne.featuredImage.width}
+                        height={firstOne.featuredImage.height}
                     />
                 </div>
                  )}
                 <div className='mainTitle'>
                     <div className='inside-xxl text-center'>
-                        <h1 className=''>{about.title}</h1>
+                        <h1 className=''>{firstOne.title}</h1>
                     </div>
                 </div>
             </div>
-
+            {firstOne.content && (
             <div className='inside-lg text-center'>
                 <div className='content'>
-                    <RichText content={about.content} />
+                    <RichText content={firstOne.content} />
                 </div>
             </div>
+            )}
+            {firstOne.excerpt && (
+            <div className='inside-lg text-center'>
+                <div className='content'>
+                    <RichText content={firstOne.excerpt} />
+                </div>
+            </div>
+            )}
 
         </>
     )

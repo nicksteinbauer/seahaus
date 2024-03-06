@@ -6,11 +6,11 @@ import StayPageCard from '@/components/stay/StayPageCard'
 import { useState } from "react"
 
 
-import Lightbox from "yet-another-react-lightbox";
+//import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-import NextJsImage from '@/components/stay/NextJsImage';
+//import NextJsImage from '@/components/stay/NextJsImage';
 import image1 from "public/gallery/JustyPeachy1.jpg";
 import image2 from "public/gallery/JustyPeachy2.jpg";
 import image3 from "public/gallery/JustyPeachy3.jpg";
@@ -48,9 +48,9 @@ const BunkRoom = ({ stickyStays, mainStays }) => {
           
           <div className='projectMap inside-xxl'>
             <div className='galleryTitle text-center flex-md justify-center'><h2>Gallery</h2> <div className='flex-vertical'><span className='smol'>- Click image for larger view</span></div></div>
-            <div onClick={() => setOpen(true)}>
+            {/* <div onClick={() => setOpen(true)}>
               Open
-            </div>
+            </div> */}
             <ul className='projectGrid auto-grid-sm agSlight'>
               {mainStays.map((stay) => (
                 <StayCardInterior 
@@ -61,12 +61,12 @@ const BunkRoom = ({ stickyStays, mainStays }) => {
             </ul>
           </div>
         </div>
-        <Lightbox
+        {/* <Lightbox
           open={open}
           close={() => setOpen(false)}
           slides={images}
           render={{ slide: NextJsImage }}
-        />
+        /> */}
         
         
       </section> 
