@@ -3,6 +3,7 @@ import Logo from "../../public/SeaHausLogo.svg"
 import Link from "next/link"
 import Nav from "./Nav"
 import HamNav from "./HamNav"
+import BookNew from "../BookNew"
 function Header() {
   return (
     <>
@@ -18,6 +19,9 @@ function Header() {
                         />
                     </Link>
                 </div>
+            </div>
+            <div className="reserve flex-vertical">
+                <BookNew />
             </div>
         </header>
         <Nav />

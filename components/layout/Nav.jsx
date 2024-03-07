@@ -38,9 +38,7 @@ function Nav() {
                         <li>
                             <Link href="/ratesbooking">Rates &amp; Booking</Link>
                         </li>
-                        <li className="reserve">
-                            <Link href="/">Reserve Now</Link>
-                        </li>
+                        
                     </ul>
                 </nav>
             </div>

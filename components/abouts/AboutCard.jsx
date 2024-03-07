@@ -1,7 +1,6 @@
 //import Link from 'next/link'
 import RichText from '../RichText'
 
-import HamNew from '@/components/HamNew'
 
 
 
@@ -19,7 +18,6 @@ const AboutCard = ({ about }) => {
                         <div className='content'>
                             <RichText content={about.excerpt} />
                         </div>
-                        <HamNew />
                     </div>
                    
                 </div>

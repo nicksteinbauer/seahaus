@@ -1,5 +1,6 @@
 import Link from "next/link"
 import PalmLogo from "./PalmLogo"
+//import BookNew from "../BookNew"
 function MobileNav({onClick}) {
   return (
     <div className="mobileNav">
@@ -13,14 +14,12 @@ function MobileNav({onClick}) {
                         <Link onClick={onClick} href="/stay">Stay</Link>
                     </li>
                     <li>
-                        <Link onClick={onClick} href="/">Experience</Link>
+                        <Link onClick={onClick} href="/experience">Experience</Link>
                     </li>
                     <li>
-                        <Link onClick={onClick} href="/">Rates &amp; Booking</Link>
+                        <Link onClick={onClick} href="/ratesbooking">Rates &amp; Booking</Link>
                     </li>
-                    <li className="reserve">
-                        <Link onClick={onClick} href="/">Reserve Now</Link>
-                    </li>
+                    
                 </ul>
             </nav>
         </div>

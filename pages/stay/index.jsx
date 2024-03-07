@@ -6,7 +6,7 @@ import StayPageCard from '@/components/stay/StayPageCard'
 
 const Stay = ({ stickyStays, mainStays }) => {
   return (
-    <main className='page all'>
+    <main className='page all stay'>
     
       <Head>
         <title>SeaHaus Exuma Bahamas | Stay Here</title>

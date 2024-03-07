@@ -3,28 +3,24 @@ import ContentfulImage from '../ui/ContentfulImage'
 //import Facebook from "../../public/facebook.svg"
 import Instagram from "../../public/instagram.svg"
 import Header from "./Header";
-
+import ContactForm from '../contact/ContactForm';
 
 
 const Layout = ({ children }) => {
     return (
         <>
             <Header />
-            <main>
-                {children}
-            </main>
+            {children}
             <footer className="mainFooter">
-                <div className="socialFooter flex-vertical">
+                <div className="socialFooter flex-md inside-md justify-center">
 
-                    <div className="always-flex justify-center">
-                        {/* <a href="http://facebook.com">
-                            <ContentfulImage
-                                alt='Facebook Social'
-                                src={Facebook}
-                                width='44'
-                                height='44'
-                            />
-                        </a> */}
+                    <div className="flex-vertical justify-center flex1">
+                        <ContactForm />
+                    </div>
+
+                    <div className="line flex-vertical"><div /></div>
+
+                    <div className="flex-vertical justify-center flex1 text-center">
                         <a href="https://www.instagram.com/seahaus.exuma/">
                             <ContentfulImage
                                 alt='Instagram Social'

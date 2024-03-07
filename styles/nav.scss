@@ -16,6 +16,7 @@
     background-color: $ltgray;
     width: 100%;
     border-bottom: 1px solid $gray;
+    z-index: 100;
     @media screen and (min-width: $screen-sm) {
         position: relative;
         margin-bottom: 44px;
@@ -69,17 +70,29 @@
             }
         }
         li.reserve {
-            a:link, a:active, a:visited {
-                background-color: $ltgray;
-                @media screen and (min-width: $screen-sm) {
-                    background-color: $gray;
-                }
-                color: $dkgray;
+          
+            .hamburgerFooter {
+              transition: all .3s ease;
             }
-            a:hover {
+            a:link, a:active, a:visited, .hamburgerFooter  {
+              font-weight: 200;
+              font-size: 16px;
+              background-color: $ltgray;
+              @media screen and (min-width: $screen-sm) {
+                  background-color: $gray;
+              }
+              color: $dkgray;
+              cursor: pointer;
+              
+            }
+            a:hover, .hamburgerFooter:hover {
                 background-color: $dkgray;
                 color: $ltgray;
             }
+        
+             
+        
+          
         }
         li.palmLogo {
             a {
@@ -120,7 +133,7 @@ $translateX: 0;
   cursor: pointer;
   width: 46px;
   position: fixed;
-  right: 10px;
+  left: 10px;
   top: 45px;
   z-index: 10000;
   @media screen and (min-width: $screen-sm) {
@@ -212,4 +225,62 @@ $translateX: 0;
     bottom: 0;
     z-index: 10;
     padding-top: 20px;
+}
+
+
+.reserve {
+  #lodgify-search-bar {
+    > div {
+      display: block;
+    }
+  }
+}
+
+.booking.bookingactive {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.reserve {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  
+  @media screen and (min-width: $screen-sm) {
+    top: 70px;
+  }
+  .hamburgerFooter {
+    transition: all .3s ease;
+  }
+  .hamburgerFooter  {
+    font-weight: 200;
+    font-size: 16px;
+    background-color: $gray;
+    @media screen and (min-width: $screen-sm) {
+        background-color: $gray;
+    }
+    color: $dkgray;
+    cursor: pointer;
+    
+  }
+  .hamburgerFooter:hover {
+      background-color: $dkgray;
+      color: $ltgray;
+  }
+
+  .search-bar-container {
+    width: 100%;
+  }
+  .button-container {
+    button {
+      background-color: $gray;
+
+    }
+    button:hover {
+      background-color: $dkgray;
+      color: #fff;
+    }
+  }
+   
 }
