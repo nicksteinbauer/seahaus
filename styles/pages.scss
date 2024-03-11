@@ -78,10 +78,8 @@ main.page {
 }
 
 .galleryCard {
-    padding: 40px 0;
-    @media screen and (min-width: $screen-sm) {
-        padding: 100px 0;
-    }
+    padding: 20px 0;
+    
     .content {
         padding: 40px 10px 10px;
         @media screen and (min-width: $screen-sm) {
@@ -122,4 +120,9 @@ main.page {
 
 .pushDown {
     padding-top: 30px;
+}
+
+.each {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

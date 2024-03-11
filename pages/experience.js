@@ -5,10 +5,11 @@ import { Inter } from 'next/font/google'
 //import Script from 'next/script'
 
 import ExperienceCard from '@/components/abouts/ExperienceCard'
+import ExperienceConCard from '@/components/abouts/ExperienceConCard'
 import GalleryCard from '@/components/abouts/GalleryCard'
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Experience({ firstOnes, secondOnes }) {
+export default function Experience({ firstOnes, secondOnes, thirdOnes }) {
   
   return (
     <>
@@ -41,6 +42,12 @@ export default function Experience({ firstOnes, secondOnes }) {
             <GalleryCard key={secondOne.slug} secondOne={secondOne} />
           ))}
         </section>
+
+        <section className='about text-center'>
+          {thirdOnes.map((thirdOne) => (
+            <ExperienceConCard key={thirdOne.slug} thirdOne={thirdOne} />
+          ))}
+        </section>
         
       </main>
     </>
@@ -59,7 +66,7 @@ export async function getStaticProps() {
       query: `
         query {
           
-          firstOne: aboutCollection( where: { category: "Experience" }, limit: 1) {
+          firstOne: aboutCollection( where: { category: "Experience" }) {
             items {
               slug
               title
@@ -98,6 +105,23 @@ export async function getStaticProps() {
               }
             }
           }
+          thirdOne: aboutCollection( where: {additionalCategory: "Concierge"}) {
+            items {
+              slug
+              title
+              excerpt {
+                json
+              }
+              content {
+                json
+              }
+              featuredImage {
+                url
+                width
+                height
+              }
+            }
+          }
         }
       `,
     })
@@ -113,11 +137,13 @@ export async function getStaticProps() {
 
   const firstOnes = data.firstOne.items;
   const secondOnes = data.secondOne.items;
+  const thirdOnes = data.thirdOne.items;
 
   return {
     props: {
       firstOnes,
-      secondOnes
+      secondOnes,
+      thirdOnes
     }
   }
 

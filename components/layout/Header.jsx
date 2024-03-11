@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import ContentfulImage from "../ui/ContentfulImage"
 import Logo from "../../public/SeaHausLogo.svg"
 import Link from "next/link"
@@ -5,9 +7,26 @@ import Nav from "./Nav"
 import HamNav from "./HamNav"
 import BookNew from "../BookNew"
 function Header() {
+    const [navigate, setNavigate] = useState(false);
+    const changeBackground = () => {
+        if (window.scrollY >= 230) {
+        setNavigate(true);
+        } else {
+        setNavigate(false);
+        }
+    };
+    if (typeof window !== `undefined`) {
+        window.addEventListener('scroll', changeBackground);
+    }
   return (
     <>
-        <header className="header inside-xxl">
+        <header
+        className={
+            navigate
+            ? "header inside-xxl navigate"
+            : "header inside-xxl"
+        }
+        >
             <div className="always-flex justify-center">
                 <div className="logo">
                     <Link href="/">
@@ -24,7 +43,7 @@ function Header() {
                 <BookNew />
             </div>
         </header>
-        <Nav />
+        <Nav navigate={navigate} />
         <HamNav />
     </>
   )

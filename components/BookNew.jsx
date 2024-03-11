@@ -37,8 +37,7 @@ export default function BookNew() {
         <button onClick={()=>setBookNew(!BookNew)} className="hamburgerFooter">
             Book Now
         </button>
-       
-        
+
         <div className={BookNew ? 'navigation flex-vertical booking' : 'navigation flex-vertical booking bookingactive'}>
             <div className="modalWindow">
                 <div className="inside-sm makeRelative">

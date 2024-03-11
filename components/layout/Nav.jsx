@@ -1,19 +1,8 @@
 import Link from "next/link"
 import PalmLogo from "./PalmLogo"
-import { useState } from "react";
 
-function Nav() {
-    const [navigate, setNavigate] = useState(false);
-    const changeBackground = () => {
-        if (window.scrollY >= 230) {
-        setNavigate(true);
-        } else {
-        setNavigate(false);
-        }
-    };
-    if (typeof window !== `undefined`) {
-        window.addEventListener('scroll', changeBackground);
-    }
+function Nav({navigate}) {
+    
     return (
         <div 
             id="Nav"

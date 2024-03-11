@@ -22,7 +22,23 @@
         margin-bottom: 44px;
         border-bottom: none;
     }
-   
+    .hamburgerFooter {
+      margin-top: 0;
+      transition: margin-top .5s ease !important;
+    }
+}
+
+
+
+.header.navigate {
+  .hamburgerFooter {
+    @media screen and (min-width: $screen-sm) {
+    margin-top: 37px;
+    position: fixed;
+    right: 20px;
+    top: -30px;
+    }
+  }
 }
 
 #Nav {

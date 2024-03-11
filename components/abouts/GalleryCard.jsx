@@ -2,7 +2,7 @@
 import RichText from '../RichText'
 
 import FeaturedImage1 from '../ui/FeaturedImage1'
-import FeaturedImage2 from '../ui/FeaturedImage2'
+// import FeaturedImage2 from '../ui/FeaturedImage2'
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
@@ -40,7 +40,7 @@ const GalleryCard = ({ secondOne }) => {
                         />
                     </div>
                     <div className='featured2'>
-                        <FeaturedImage2
+                        <FeaturedImage1
                             alt={`Cover Image for ${secondOne.title}`}
                             src={secondOne.additionalImage.url}
                             width={secondOne.additionalImage.width}

@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 //import Script from 'next/script'
 
 import ExperienceCard from '@/components/abouts/ExperienceCard'
-import HamNew from '@/components/HamNew'
+import BookNew from '@/components/BookNew'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -66,13 +66,7 @@ export default function RatesBooking({ firstOnes, secondOnes }) {
           </div>
         </section>
 
-        <div className='pushDown text-center'>
-          <nav>
-            <button className="hamburgerFooter">
-                Reserve Now
-            </button>
-          </nav>
-        </div>
+        
 
       </main>
     </>
