@@ -3,8 +3,8 @@ import { Component } from 'react';
 import * as emailjs from "emailjs-com";
 import { Button, Form, Label, Input, FormGroup, FormFeedback } from "reactstrap";
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
 import { isEmail } from "validator";
 
@@ -28,9 +28,9 @@ export default class ContactForm extends Component {
           name: "",
           email: "",
           phone: "",
+          checkin: "",
+          checkout: "",
           message: "",
-          date: new Date(), 
-          // checkout: new Date(), 
         },
       errors: {}
     })
@@ -114,31 +114,32 @@ export default class ContactForm extends Component {
           <h3>Contact SeaHaus</h3>
           <Form onSubmit={this.handleSubmit} className='actualForm'>
             
-            <FormGroup className="padding flex-sm">
-                <Label className="text-muted" for="name">Name</Label>
-                <Input 
-                    type="text"
-                    id="name"
-                    placeholder="Name"
-                    name="name"
-                    value={data.name}
-                    invalid={errors.name ? true : false}
-                    onChange={this.handleChange}
-                  />
-                <FormFeedback>{errors.name}</FormFeedback>
-            </FormGroup>
-            <FormGroup className="padding flex-sm">
-                <Label className="text-muted" for="email">Email</Label>
-                <Input 
-                    id="email"
-                    placeholder="Email"
-                    name="email"
-                    value={data.email}
-                    invalid={errors.email ? true : false}
-                    onChange={this.handleChange}
-                  />
-                <FormFeedback>{errors.email}</FormFeedback>
-            </FormGroup>
+                <FormGroup className="padding flex-sm">
+                    <Label className="text-muted" for="name">Name</Label>
+                    <Input 
+                        type="text"
+                        id="name"
+                        placeholder="Name"
+                        name="name"
+                        value={data.name}
+                        invalid={errors.name ? true : false}
+                        onChange={this.handleChange}
+                     />
+                    <FormFeedback>{errors.name}</FormFeedback>
+                </FormGroup>
+                <FormGroup className="padding flex-sm">
+                    <Label className="text-muted" for="email">Email</Label>
+                    <Input 
+                        id="email"
+                        placeholder="Email"
+                        name="email"
+                        value={data.email}
+                        invalid={errors.email ? true : false}
+                        onChange={this.handleChange}
+                     />
+                    <FormFeedback>{errors.email}</FormFeedback>
+                </FormGroup>
+            
             
             <FormGroup className="padding flex-sm">
                 <Label className="text-muted" for="phone">Phone #</Label>
@@ -154,33 +155,31 @@ export default class ContactForm extends Component {
                 <FormFeedback>{errors.phone}</FormFeedback>
             </FormGroup>
             <FormGroup className="padding flex-sm">
-              <Label className="text-muted">Check In</Label>
-              <DatePicker
-                selected={data.date}
-                onChange={(date) =>
-                  this.setState({
-                    data: {
-                      ...this.state.data,
-                      date: date
-                    }
-                  })
-                }
-              />
+                <Label className="text-muted" for="checkin">Check In</Label>
+                <Input 
+                    type="text"
+                    id="checkin"
+                    placeholder="MM/DD/YYYY"
+                    name="checkin"
+                    value={data.checkin}
+                    invalid={errors.checkin ? true : false}
+                    onChange={this.handleChange}
+                />
+                <FormFeedback>{errors.checkin}</FormFeedback>
             </FormGroup>
-            {/* <FormGroup className="padding flex-sm">
-              <Label className="text-muted">Check Out</Label>
-              <DatePicker
-                selected={data.checkout}
-                onChange={(checkout) =>
-                  this.setState({
-                    data: {
-                      ...this.state.data,
-                      checkout: checkout
-                    }
-                  })
-                }
-              />
-            </FormGroup> */}
+            <FormGroup className="padding flex-sm">
+                <Label className="text-muted" for="checkout">Check Out</Label>
+                <Input 
+                    type="text"
+                    id="checkout"
+                    placeholder="MM/DD/YYYY"
+                    name="checkout"
+                    value={data.checkout}
+                    invalid={errors.checkout ? true : false}
+                    onChange={this.handleChange}
+                />
+                <FormFeedback>{errors.checkout}</FormFeedback>
+            </FormGroup>
             <FormGroup className="padding flex-sm">
                 <Label className="text-muted" for="message">Notes</Label>
                 <Input 
