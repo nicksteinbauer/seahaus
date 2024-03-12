@@ -32,7 +32,7 @@ const ExperienceCard = ({ firstOne }) => {
             </div>
             )}
             {firstOne.excerpt && (
-            <div className='inside-lg text-center'>
+            <div className='inside-sm text-center whiteBack'>
                 <div className='content'>
                     <RichText content={firstOne.excerpt} />
                 </div>

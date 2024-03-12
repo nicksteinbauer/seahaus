@@ -39,8 +39,9 @@ export default function RatesBooking({ firstOnes, secondOnes }) {
             <div className='whiteBack forty-five flex-vertical'>
               <div className='content'>
                 
+                  <p className="bigger"><strong>To find rates & availability, please access our <a href="https://www.vrbo.com/3431116?dateless=true" target="_blank">VRBO page here.</a> Preferably booked via this website, the home is listed on VRBO but fees apply for owner & renter. Click Book Now above to forgo fees.</strong></p>
                   <p>Nightly Rate $1100, 4 Night Minimum<br/> Cleaning fee $350 <br/>Bahamas VAT 10%</p>
-                  <p>Preferably booked via this website, the home is listed on VRBO but fees apply for owner & renter.</p>
+                  <p></p>
                   <p>Payment via Credit Cards (Visa, Mastercard, Discover,Amex) Check or Venmo</p>
                   <p>Secure your reservation with 50% of rental rate and signed rental agreement</p>
                 

@@ -12,13 +12,7 @@ const Layout = ({ children }) => {
             <Header />
             {children}
             <footer className="mainFooter">
-                <div className="socialFooter flex-md inside-md justify-center">
-
-                    <div className="flex-vertical justify-center flex1">
-                        <ContactForm />
-                    </div>
-
-                    <div className="line flex-vertical"><div /></div>
+                <div className="socialFooter inside-md justify-center">
 
                     <div className="flex-vertical justify-center flex1 text-center">
                         <a href="https://www.instagram.com/seahaus.exuma/">

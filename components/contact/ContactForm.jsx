@@ -111,7 +111,8 @@ export default class ContactForm extends Component {
     const { data, errors } = this.state;
     return (
         <div id="contact-form" className="forty-nine">
-          <h3>Contact SeaHaus</h3>
+          <h3>SeaHaus Booking Request</h3>
+          <p className="smol"><a href="https://www.vrbo.com/3431116?dateless=true" target="_blank">Click here to book via VRBO</a>, if you would like to forgo fees, fill out a request to book below</p>
           <Form onSubmit={this.handleSubmit} className='actualForm'>
             
                 <FormGroup className="padding flex-sm">

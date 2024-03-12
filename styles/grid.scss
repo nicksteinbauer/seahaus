@@ -275,6 +275,10 @@ img {
     gap: 10px;
 }
 
+.smol {
+    font-size: .8em;
+}
+
 .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

@@ -3,16 +3,7 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { useEffect } from "react";
 
-import Script from 'next/script'
-
-
-
-
-//import { useClickAway } from "@uidotdev/usehooks";
-
-//import Link from "next/link";
-
-import Widget from "./Widget";
+import ContactForm from "./contact/ContactForm";
 
 export default function BookNew() {
 
@@ -48,7 +39,7 @@ export default function BookNew() {
                         </div>
                     </button>
                     <nav className="modalRef">
-                    <Widget />
+                    <ContactForm />
                     </nav>
                 </div>
             </div>
