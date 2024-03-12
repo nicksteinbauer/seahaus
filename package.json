@@ -29,6 +29,7 @@
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.12",
     "validator": "^13.9.0",
-    "yet-another-react-lightbox": "^3.17.0"
+    "yet-another-react-lightbox": "^3.17.0",
+    "react-datepicker": "^4.8.0"
   }
 }

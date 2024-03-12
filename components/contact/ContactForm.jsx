@@ -3,6 +3,9 @@ import { Component } from 'react';
 import * as emailjs from "emailjs-com";
 import { Button, Form, Label, Input, FormGroup, FormFeedback } from "reactstrap";
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import { isEmail } from "validator";
 
 import Recaptcha from 'react-recaptcha';
@@ -24,8 +27,10 @@ export default class ContactForm extends Component {
       data: {
           name: "",
           email: "",
-          subject: "",
-          message: ""
+          phone: "",
+          message: "",
+          checkin: new Date(), 
+          checkout: new Date(), 
         },
       errors: {}
     })
@@ -65,7 +70,9 @@ export default class ContactForm extends Component {
         let errors = {};
 
         //@ts-ignore
-        if (data.name === '') errors.name = '* Name required'; if (!isEmail(data.email)) errors.email = '* Email must be valid'; if (data.email === '') errors.email = '* Email required'; if (data.subject === '') errors.subject = '* Subject required'; if (data.message === '') errors.message = '* Message required';
+        if (data.name === '') errors.name = '* Name required'; if (!isEmail(data.email)) errors.email = '* Email must be valid'; if (data.email === '') errors.email = '* Email required'; 
+        // if (data.subject === '') errors.subject = '* Subject required'; 
+        // if (data.message === '') errors.message = '* Message required';
         return errors;
     }
   
@@ -80,7 +87,7 @@ export default class ContactForm extends Component {
         if (Object.keys(errors).length === 0 && this.state.isVerified) {
             console.log(data);
             //Call an api here
-            emailjs.sendForm('seahausrouter', 'seahaus_contact', e.target, 'user_vOc0ylPHeC2nCdyLQJAiW')
+            emailjs.sendForm('seahausrouter', 'seahaus_booking', e.target, 'user_vOc0ylPHeC2nCdyLQJAiW')
 
             //Resetting the form
             this.setState(this.getInitialState());
@@ -107,52 +114,79 @@ export default class ContactForm extends Component {
           <h3>Contact SeaHaus</h3>
           <Form onSubmit={this.handleSubmit} className='actualForm'>
             
-                <FormGroup className="padding flex-sm">
-                    <Label className="text-muted" for="name">Name</Label>
-                    <Input 
-                        type="text"
-                        id="name"
-                        placeholder="Name"
-                        name="name"
-                        value={data.name}
-                        invalid={errors.name ? true : false}
-                        onChange={this.handleChange}
-                     />
-                    <FormFeedback>{errors.name}</FormFeedback>
-                </FormGroup>
-                <FormGroup className="padding flex-sm">
-                    <Label className="text-muted" for="email">Email</Label>
-                    <Input 
-                        id="email"
-                        placeholder="Email"
-                        name="email"
-                        value={data.email}
-                        invalid={errors.email ? true : false}
-                        onChange={this.handleChange}
-                     />
-                    <FormFeedback>{errors.email}</FormFeedback>
-                </FormGroup>
-            
-            
             <FormGroup className="padding flex-sm">
-                <Label className="text-muted" for="subject">Subject</Label>
+                <Label className="text-muted" for="name">Name</Label>
                 <Input 
                     type="text"
-                    id="subject"
-                    placeholder="Subject"
-                    name="subject"
-                    value={data.subject}
-                    invalid={errors.subject ? true : false}
+                    id="name"
+                    placeholder="Name"
+                    name="name"
+                    value={data.name}
+                    invalid={errors.name ? true : false}
                     onChange={this.handleChange}
-                />
-                <FormFeedback>{errors.subject}</FormFeedback>
+                  />
+                <FormFeedback>{errors.name}</FormFeedback>
             </FormGroup>
             <FormGroup className="padding flex-sm">
-                <Label className="text-muted" for="message">Message</Label>
+                <Label className="text-muted" for="email">Email</Label>
+                <Input 
+                    id="email"
+                    placeholder="Email"
+                    name="email"
+                    value={data.email}
+                    invalid={errors.email ? true : false}
+                    onChange={this.handleChange}
+                  />
+                <FormFeedback>{errors.email}</FormFeedback>
+            </FormGroup>
+            
+            <FormGroup className="padding flex-sm">
+                <Label className="text-muted" for="phone">Phone #</Label>
+                <Input 
+                    type="text"
+                    id="phone"
+                    placeholder="Phone #"
+                    name="phone"
+                    value={data.phone}
+                    invalid={errors.phone ? true : false}
+                    onChange={this.handleChange}
+                />
+                <FormFeedback>{errors.phone}</FormFeedback>
+            </FormGroup>
+            <FormGroup className="padding flex-sm">
+              <Label className="text-muted">Check In</Label>
+              <DatePicker
+                selected={data.checkin}
+                onChange={(checkin) =>
+                  this.setState({
+                    data: {
+                      ...this.state.data,
+                      checkin: checkin
+                    }
+                  })
+                }
+              />
+            </FormGroup>
+            <FormGroup className="padding flex-sm">
+              <Label className="text-muted">Check Out</Label>
+              <DatePicker
+                selected={data.checkout}
+                onChange={(checkout) =>
+                  this.setState({
+                    data: {
+                      ...this.state.data,
+                      checkout: checkout
+                    }
+                  })
+                }
+              />
+            </FormGroup>
+            <FormGroup className="padding flex-sm">
+                <Label className="text-muted" for="message">Notes</Label>
                 <Input 
                     type="textarea"
                     id="message"
-                    placeholder="Message"
+                    placeholder="Notes"
                     name="message"
                     value={data.message}
                     invalid={errors.message ? true : false}
