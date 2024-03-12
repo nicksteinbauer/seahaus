@@ -29,8 +29,8 @@ export default class ContactForm extends Component {
           email: "",
           phone: "",
           message: "",
-          checkin: new Date(), 
-          checkout: new Date(), 
+          date: new Date(), 
+          // checkout: new Date(), 
         },
       errors: {}
     })
@@ -156,18 +156,18 @@ export default class ContactForm extends Component {
             <FormGroup className="padding flex-sm">
               <Label className="text-muted">Check In</Label>
               <DatePicker
-                selected={data.checkin}
-                onChange={(checkin) =>
+                selected={data.date}
+                onChange={(date) =>
                   this.setState({
                     data: {
                       ...this.state.data,
-                      checkin: checkin
+                      date: date
                     }
                   })
                 }
               />
             </FormGroup>
-            <FormGroup className="padding flex-sm">
+            {/* <FormGroup className="padding flex-sm">
               <Label className="text-muted">Check Out</Label>
               <DatePicker
                 selected={data.checkout}
@@ -180,7 +180,7 @@ export default class ContactForm extends Component {
                   })
                 }
               />
-            </FormGroup>
+            </FormGroup> */}
             <FormGroup className="padding flex-sm">
                 <Label className="text-muted" for="message">Notes</Label>
                 <Input 
