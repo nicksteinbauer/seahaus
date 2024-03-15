@@ -59,11 +59,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { featured:true, sticky:false }) {
+          mainStay:stayCollection(where: { featured:true, sticky:false }, order: stayOrder_ASC) {
             items {
               title
               slug
               category
+              stayOrder
               imageThumb {
                 url
                 width
