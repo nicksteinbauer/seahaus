@@ -9,7 +9,7 @@ const BeachfrontVeranda = ({ stickyStays, mainStays }) => {
     <main className='page all'>
     
       <Head>
-        <title>SeaHaus Exuma Bahamas | Beachfront Veranda</title>
+        <title>Beachfront Veranda | SeaHaus Exuma Bahamas</title>
         <meta name="description" content="Indulge in luxury at your oasis on Three Sisters Beach in Exuma. This newly renovated organic modern beachfront home offers panoramic ocean views, a serene ambiance, and stylish design. From the spacious veranda to the custom ensuite featuring ocean views, every detail invites relaxation. Explore Bahamian moments captured in photography throughout the home, while practical amenities like a laundry room and additional fridge add convenience. Escape to this exquisite retreat and let the beauty of Exuma envelop you." />
       </Head>
 
