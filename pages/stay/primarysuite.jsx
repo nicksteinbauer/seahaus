@@ -45,11 +45,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Primary Suite", sticky:false, categorySticky:false }) {
+          mainStay:stayCollection(where: { category: "Primary Suite", sticky:false }, order: roomOrder_ASC) {
             items {
               title
               slug
               category
+              roomOrder
               imageThumb {
                 url
                 width

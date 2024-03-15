@@ -64,11 +64,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Great Room & Kitchen", sticky:false, categorySticky:false }) {
+          mainStay:stayCollection(where: { category: "Great Room & Kitchen", sticky:false }, order: roomOrder_ASC) {
             items {
               title
               slug
               category
+              roomOrder
               imageThumb {
                 url
                 width

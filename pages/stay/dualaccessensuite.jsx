@@ -46,11 +46,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Dual Access Ensuite", sticky:false, categorySticky:false }) {
+          mainStay:stayCollection(where: { category: "Dual Access Ensuite", sticky:false, categorySticky:false }, order: roomOrder_ASC) {
             items {
               title
               slug
               category
+              roomOrder
               imageThumb {
                 url
                 width

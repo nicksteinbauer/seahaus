@@ -45,11 +45,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Guest Bedroom", sticky:false, categorySticky:false }) {
+          mainStay:stayCollection(where: { category: "Guest Bedroom", sticky:false }, order: roomOrder_ASC) {
             items {
               title
               slug
               category
+              roomOrder
               imageThumb {
                 url
                 width

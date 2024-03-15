@@ -46,11 +46,12 @@ export async function getStaticProps() {
               }
             }
           }
-          mainStay:stayCollection(where: { category: "Beachfront Veranda", sticky:false }) {
+          mainStay:stayCollection(where: { category: "Beachfront Veranda", sticky:false }, order: roomOrder_ASC) {
             items {
               title
               slug
               category
+              roomOrder
               imageThumb {
                 url
                 width
