@@ -1,9 +1,9 @@
 // This will need to be deleted once the gallery is fixed
-.galleryTitle {
-    .smol {
-        display: none;
-    }
-}
+// .galleryTitle {
+//     .smol {
+//         display: none;
+//     }
+// }
 // This will need to be deleted once the gallery is fixed
 
 main.page {
@@ -49,6 +49,9 @@ main.page {
         grid-gap: 14px;
         img {
             width: 100%;
+        }
+        a {
+            max-width: 531px;
         }
     }
 }
