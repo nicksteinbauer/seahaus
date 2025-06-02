@@ -40,9 +40,9 @@ export default function RatesBooking({ firstOnes, secondOnes }) {
               <div className='content'>
                 
                   <p className="bigger"><strong>To find rates & availability, please access our <a href="https://www.vrbo.com/3431116?dateless=true" target="_blank">VRBO page here.</a> Preferably booked via this website, the home is listed on VRBO but fees apply for owner & renter. Click Book Now above to forgo fees.</strong></p>
-                  <p>Nightly Rate $1100, 4 Night Minimum<br/> Cleaning fee $350 <br/>Bahamas VAT 10%</p>
+                  <p>Nightly Rate $1250, 4 Night Minimum<br/> Cleaning Fee $350 <br/>Bahamas VAT 10%</p>
                   <p></p>
-                  <p>Payment via Credit Cards (Visa, Mastercard, Discover,Amex) Check or Venmo</p>
+                  <p>Payment via Credit Cards (Visa, Mastercard, Discover, Amex) Check or Venmo</p>
                   <p>Secure your reservation with 50% of rental rate and signed rental agreement</p>
                 
               </div>
@@ -52,14 +52,14 @@ export default function RatesBooking({ firstOnes, secondOnes }) {
                 
                   <p>No Pets Allowed<br/>
                   No Smoking Allowed<br/>
-                  Maximum overnight guest: 8<br/>
-                  Minimum age to rent: 25 y/o
+                  Maximum Overnight Guests: 8<br/>
+                  Minimum Age to Rent: 25 y/o
                   </p>
                   <p>If you are planning an event, such as a wedding, birthday or family gathering, owner must approve and agree to.</p>
                   <p>CANCELATION POLICY<br/>
                   100% refund of deposit if canceled 60 days prior to stay. 50% refund of deposit if canceled 30 days prior to stay.</p>
-                  <p>Check in: 4pm<br/>
-                  Check out: 11am
+                  <p>Check In: 4pm<br/>
+                  Check Out: 11am
                   </p>
                   <p>Early Check-in at 1pm can be accommodated with a 2 week notice. Service fee is applied.</p>
               </div>
