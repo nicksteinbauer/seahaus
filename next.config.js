@@ -1,14 +1,20 @@
+const withVideos = require('next-videos');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    loader: 'custom'
-  }
-}
+    loader: 'custom',
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
-
-const withVideos = require('next-videos')
-
-module.exports = withVideos()
+module.exports = withVideos(nextConfig);
